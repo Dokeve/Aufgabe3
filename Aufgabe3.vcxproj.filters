@@ -24,6 +24,9 @@
     <ClCompile Include="rectmat.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="HilfsFkt.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="constants.h">
@@ -33,6 +36,9 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="rectmat.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="HilfsFkt.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

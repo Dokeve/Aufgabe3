@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="HilfsFkt.cpp" />
     <ClCompile Include="main.cpp">
       <SubType>
       </SubType>
@@ -29,6 +30,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="constants.h" />
+    <ClInclude Include="HilfsFkt.h" />
     <ClInclude Include="rectmat.h" />
     <ClInclude Include="sqmat.h" />
   </ItemGroup>

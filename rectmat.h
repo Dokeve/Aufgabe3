@@ -1,5 +1,7 @@
 #pragma once
 #include "constants.h"
+#include <iostream>
+#include "HilfsFkt.h"
 
 class rectmat
 {
@@ -7,17 +9,21 @@ public:
 	rectmat();
 	~rectmat();
 	rectmat(int, int);
-	rectmat(int,int,double);
+	rectmat(int, int, double);
 	rectmat(int, int, double[]);
+	/**
+	Copyconstruktor
+	*/
+	rectmat(const rectmat& mat1);
 	/**
 	* Gibt Feldwert am Index i,j zurück
 	* @param int row
 	* @param int col
-	* 
+	*
 	*/
 	double get(int, int);
 	/**
-	* Setzt Feldwert am Index i,j 
+	* Setzt Feldwert am Index i,j
 	* @param int row
 	* @param int col
 	* @param double entry
@@ -32,7 +38,7 @@ public:
 	*/
 	int getRow() const;
 	/**
-	 Gibt Spaltenwert des aktuellen Objekts auf der Konsole zurück 
+	 Gibt Spaltenwert des aktuellen Objekts auf der Konsole zurück
 	*/
 	int getCol() const;
 private:
@@ -49,5 +55,16 @@ private:
 	Pointer für Matrix
 	*/
 	double* pmat;
+	///*
+	//Operator << überladung
+	//**/
+	//friend ostream &operator<<(ostream & os, const rectmat &mat1);
+	///*
+	//Operator >> überladung
+	//**/
+	//friend istream &operator>>(istream & in, rectmat &mat1);
+	
+
+
 };
 

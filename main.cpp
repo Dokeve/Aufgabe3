@@ -14,7 +14,17 @@ using namespace std;
 
 
 int main()  {
-	rectmat matA;
+	rectmat matA(3, 4, 5);
+	matA.set(1, 2, 6);
+	matA.set(0, 2, 7);
+	matA.set(1, 3, 4);
+	matA.set(1, 0, 1);
+	matA.show();
+	rectmat matB = matA;
+	matB.set(1, 2, 9);
+	matB.show();
+	matA.show();
+	/*rectmat matA;
 	matA.show();
 	rectmat mats[4] = {
 	rectmat(7,6),
@@ -52,7 +62,7 @@ int main()  {
 		1,2,3,4,5,6,7,8,9,12,76,66,334,7,9,67,99
 	};
 	rectmat matC(5, 7, val);
-	matC.show();
+	matC.show();*/
 	return 0;
 }
 

@@ -41,6 +41,16 @@ rectmat::rectmat(int row, int col, double values[]):col(col), row(row){
 	for (int i = 0; i < col * row; i++) {
 		*(pmat + i) = values[i];
 	}
+}
+rectmat::rectmat(const rectmat& mat1): row(mat1.getRow()),col(mat1.getCol()) {
+	cout << "Der Copyconstruktor  von rectmat wurde aufgerufen." << endl;
+	pmat = new double[row * col];
+	for (int i = 0; i < row; i++) {
+		for (int j = 0; j < col; j++) {
+			this->set(i, j, mat1.pmat[this->getIndex(i, j)]);
+		}
+		
+	}
 };
 rectmat::rectmat(int row, int col) : col(col), row(row) {
 	pmat = new double[row * col];
@@ -67,7 +77,7 @@ void rectmat::show() {
 void rectmat::set(int i, int j, double entry) {
 	*(pmat + this->getIndex(i, j)) = entry;
 };
-int rectmat::getIndex(int irow, int jcol) {
+int rectmat::getIndex(int irow, int jcol)  {
 	index = jcol + irow * col;
 	return index;
 };
