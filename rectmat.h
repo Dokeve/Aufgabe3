@@ -1,7 +1,7 @@
 #pragma once
 #include "constants.h"
 #include <iostream>
-#include "HilfsFkt.h"
+
 
 class rectmat
 {
@@ -41,6 +41,19 @@ public:
 	 Gibt Spaltenwert des aktuellen Objekts auf der Konsole zurück
 	*/
 	int getCol() const;
+	rectmat operator*(const double scal);
+	rectmat operator/(const double scal);
+	rectmat operator+(const rectmat mat1);
+	rectmat operator-(const rectmat mat1);
+	rectmat &operator=(const rectmat& mat1);
+	///*
+	//Operator << überladung
+	//**/
+	//friend ostream& operator<<(ostream& os, const rectmat& mat1);
+	///*
+	//Operator >> überladung
+	//**/
+	//friend istream& operator>>(istream& in, rectmat& mat1);
 private:
 	/**
 	* Gibt Gibt index in abhängigkeit von Zeile und Spalte zurück
@@ -55,14 +68,7 @@ private:
 	Pointer für Matrix
 	*/
 	double* pmat;
-	///*
-	//Operator << überladung
-	//**/
-	//friend ostream &operator<<(ostream & os, const rectmat &mat1);
-	///*
-	//Operator >> überladung
-	//**/
-	//friend istream &operator>>(istream & in, rectmat &mat1);
+	
 	
 
 

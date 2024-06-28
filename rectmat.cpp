@@ -86,4 +86,54 @@ int rectmat::getRow() const {
 };
 int rectmat::getCol() const {
 	return col; 
-};
+}
+rectmat rectmat::operator*(const double scal){ 
+	rectmat temp(row, col);
+		temp = *this;
+		for (int i = 0; i < col * row; i++) {
+			temp.pmat[i]*=scal;
+		}
+	
+	return temp;
+}
+rectmat rectmat::operator/(const double scal){
+	rectmat temp(row, col);
+	temp = *this;
+	for (int i = 0; i < col * row; i++) {
+		temp.pmat[i] /= scal;
+	}
+
+	return temp;
+}
+rectmat rectmat::operator+(const rectmat mat1){
+	rectmat temp(row, col);
+	temp = *this;
+	for (int i = 0; i < row; i++) {
+		for (int j = 0; j < col; j++) {
+			temp.set(i, j, this->get(i, j) + mat1.pmat[this->getIndex(i, j)]);
+		}
+
+	}
+	return temp;
+}
+rectmat rectmat::operator-(const rectmat mat1) {
+	rectmat temp(row, col);
+	temp = *this;
+	for (int i = 0; i < row; i++) {
+		for (int j = 0; j < col; j++) {
+			temp.set(i, j, this->get(i, j) - mat1.pmat[this->getIndex(i, j)]);
+		}
+
+	}
+	return temp;
+}
+rectmat& rectmat::operator=(const rectmat& mat1){
+	for (int i = 0; i < row; i++) {
+		for (int j = 0; j < col; j++) {
+			this->set(i, j, mat1.pmat[this->getIndex(i, j)]);
+		}
+
+	}
+	return *this;
+}
+;

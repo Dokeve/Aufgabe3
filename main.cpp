@@ -15,15 +15,26 @@ using namespace std;
 
 int main()  {
 	rectmat matA(3, 4, 5);
-	matA.set(1, 2, 6);
+	rectmat matB(3, 4);
+	matB = matA * 3;
+	matA.show();
+	matB.show();
+	rectmat matC(3, 4);
+	matC	= matA+matB;
+	matC.show();
+	matC = matB / 5;
+	matC.show();
+	matA = matB - matC;
+	matA.show();
+	/*matA.set(1, 2, 6);
 	matA.set(0, 2, 7);
 	matA.set(1, 3, 4);
 	matA.set(1, 0, 1);
-	matA.show();
+	
 	rectmat matB = matA;
 	matB.set(1, 2, 9);
 	matB.show();
-	matA.show();
+	matA.show();*/
 	/*rectmat matA;
 	matA.show();
 	rectmat mats[4] = {
