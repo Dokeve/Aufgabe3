@@ -1,7 +1,7 @@
 #pragma once
 #include "constants.h"
 #include <iostream>
-
+using namespace std;
 
 class rectmat
 {
@@ -22,6 +22,7 @@ public:
 	*
 	*/
 	double get(int, int);
+	double get(int, int) const;
 	/**
 	* Setzt Feldwert am Index i,j
 	* @param int row
@@ -46,14 +47,14 @@ public:
 	rectmat operator+(const rectmat mat1);
 	rectmat operator-(const rectmat mat1);
 	rectmat &operator=(const rectmat& mat1);
-	///*
-	//Operator << überladung
-	//**/
-	//friend ostream& operator<<(ostream& os, const rectmat& mat1);
-	///*
-	//Operator >> überladung
-	//**/
-	//friend istream& operator>>(istream& in, rectmat& mat1);
+	/*
+	Operator << überladung
+	**/
+	friend ostream& operator<<(ostream& os, const rectmat& mat1);
+	/*
+	Operator >> überladung
+	**/
+	friend istream& operator>>(istream& in, rectmat& mat1);
 private:
 	/**
 	* Gibt Gibt index in abhängigkeit von Zeile und Spalte zurück
