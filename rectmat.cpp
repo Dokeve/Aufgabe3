@@ -91,6 +91,16 @@ int rectmat::getRow() const {
 int rectmat::getCol() const {
 	return col; 
 }
+rectmat rectmat::transp()
+{
+	rectmat AT(row, col);
+	for (int i = 0; i < row; i++) {
+		for (int j = 0; j < col; j++) {
+			AT.set(j, i, this->get(i, j));
+		}
+	}
+	return AT;
+}
 rectmat rectmat::operator*(const double scal){ 
 	rectmat temp(row, col);
 		temp = *this;

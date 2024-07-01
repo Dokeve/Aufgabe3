@@ -42,6 +42,7 @@ public:
 	 Gibt Spaltenwert des aktuellen Objekts auf der Konsole zurück
 	*/
 	int getCol() const;
+	rectmat transp();
 	rectmat operator*(const double scal);
 	rectmat operator/(const double scal);
 	rectmat operator+(const rectmat mat1);
