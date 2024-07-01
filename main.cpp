@@ -9,6 +9,7 @@
 #include "constants.h"
 #include "sqmat.h"
 #include "rectmat.h"
+#include "HilfsFkt.h"
 using namespace std;
 
 
@@ -25,55 +26,13 @@ int main()  {
 	matC = matB / 5;
 	matC.show();
 	matA = matB - matC;
-	matA.show();
-	/*matA.set(1, 2, 6);
-	matA.set(0, 2, 7);
-	matA.set(1, 3, 4);
-	matA.set(1, 0, 1);
+	cout << matA;
+	matC = 7*matB;
+	cout <<matC;
+	rectmat matD(2, 2);
+	cin >> matD;
+	cout << matD;
 	
-	rectmat matB = matA;
-	matB.set(1, 2, 9);
-	matB.show();
-	matA.show();*/
-	/*rectmat matA;
-	matA.show();
-	rectmat mats[4] = {
-	rectmat(7,6),
-	rectmat(3,5,5),
-	rectmat(4,3,1)
-	};
-	for (int i = 0; i <= 3; i++) {
-		cout << "Matrize " << i << endl;
-		mats[i].show();
-	}
-	sqmat matB(5,4);
-	for (int i = 0; i < matB.getRow(); i++) {
-		for (int j = 0; j < matB.getCol(); j++) {
-			matB.set(i,j,j+i*N);
-		}
-	}
-	matB.show();
-	matB.trace();
-	sqmat sqmats[4] = {
-	sqmat(7),
-	sqmat(4,10),
-	sqmat(6,3),
-	};
-	for (int i = 0; i < sqmats[0].getRow(); i++) {
-		for (int j = 0; j < sqmats[0].getCol(); j++) {
-			sqmats[0].set(i, j, j + i * N);
-		}
-	}
-	for (int i = 0; i <= 3; i++) {
-		cout << "Square Matrix " << i << endl;
-		sqmats[i].show();
-		sqmats[i].trace();
-	}
-	double val[35] = {
-		1,2,3,4,5,6,7,8,9,12,76,66,334,7,9,67,99
-	};
-	rectmat matC(5, 7, val);
-	matC.show();*/
 	return 0;
 }
 
