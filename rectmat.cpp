@@ -62,6 +62,9 @@ rectmat::rectmat(int row, int col) : col(col), row(row) {
 double rectmat::get(int i, int j) {
 	return *(pmat + this->getIndex(i, j));
 };
+double rectmat::get(int i, int j) const {
+	return pmat[j+i*col];
+};
 
 void rectmat::show() {
 	for (int i = 0; i < row * col; i++) {
@@ -81,6 +84,7 @@ int rectmat::getIndex(int irow, int jcol)  {
 	index = jcol + irow * col;
 	return index;
 };
+
 int rectmat::getRow() const {
 	return row; 
 };
