@@ -10,5 +10,6 @@ public:
 	sqmat(int);
 	sqmat(int,double);
 	sqmat(int, double[]);
+	sqmat& operator=(const rectmat& mat1);
 	void trace();
 };

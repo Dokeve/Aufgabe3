@@ -33,18 +33,28 @@ int main()  {
 	cin >> matD;
 	cout << matD;
 	cout << matD.transp();*/
-	rectmat A(3, 4, 7);
-	rectmat B(3, 4);
+	rectmat A(3, 3, 7);
+	rectmat B(3, 3);
 	cin >> B;
-	rectmat C(3, 4);
+	rectmat C(3, 3);
 	C = B - 3 * A;
 	cout << A << endl;
 	cout << B << endl;
 	cout << C << endl;
 	//cout << "C Transponiert" << C.transp() << endl;
 	rectmat D(3, 4);
-	D = C.transp();//<- hier schmeißt er immer einen Löschfehler, wieso?
+	//D = C.transp();//<- hier schmeißt er immer einen Löschfehler, wieso?
 	cout << D << endl;
+	rectmat E(3, 3, 4);
+	sqmat F(3);
+	sqmat G(3,3);
+	sqmat H(3);
+	F = E+A;//wieso geht das auch ohne extra Operatorfunktionen?
+	H = F + G;
+	cout << E << endl;
+	cout << F << endl;
+	cout << H << endl;
+	H.trace();
 	return 0;
 }
 
