@@ -15,24 +15,6 @@ using namespace std;
 
 
 int main()  {
-	/*rectmat matA(3, 4, 5);
-	rectmat matB(3, 4);
-	matB = matA * 3;
-	matA.show();
-	matB.show();
-	rectmat matC(3, 4);
-	matC	= matA+matB;
-	matC.show();
-	matC = matB / 5;
-	matC.show();
-	matA = matB - matC;
-	cout << matA;
-	matC = 7*matB;
-	cout <<matC;
-	rectmat matD(3, 3);
-	cin >> matD;
-	cout << matD;
-	cout << matD.transp();*/
 	rectmat A(3, 3, 7);
 	rectmat B(3, 3);
 	cin >> B;
@@ -41,15 +23,14 @@ int main()  {
 	cout << A << endl;
 	cout << B << endl;
 	cout << C << endl;
-	//cout << "C Transponiert" << C.transp() << endl;
-	rectmat D(3, 4);
-	//D = C.transp();//<- hier schmeißt er immer einen Löschfehler, wieso?
+	rectmat D(3, 3);
+	D = B.transp();
 	cout << D << endl;
 	rectmat E(3, 3, 4);
 	sqmat F(3);
 	sqmat G(3,3);
 	sqmat H(3);
-	F = E+A;//wieso geht das auch ohne extra Operatorfunktionen?
+	F = E+A;
 	H = F + G;
 	cout << E << endl;
 	cout << F << endl;

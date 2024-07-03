@@ -6,11 +6,7 @@ rectmat operator*(const double scal, const rectmat mat1){
 	temp = mat1;
 	return temp*scal;
 }
-rectmat operator/(const double scal, const rectmat mat1) {
-	rectmat temp(mat1.getRow(), mat1.getCol());
-	temp = mat1;
-	return temp / scal;
-}
+
 
 ostream& operator<<(ostream& os, const rectmat& mat1){
 

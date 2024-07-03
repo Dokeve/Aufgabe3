@@ -93,7 +93,7 @@ int rectmat::getCol() const {
 }
 rectmat rectmat::transp()
 {
-	rectmat AT(row, col);
+	rectmat AT(col, row);
 	for (int i = 0; i < row; i++) {
 		for (int j = 0; j < col; j++) {
 			AT.set(j, i, this->get(i, j));
@@ -102,11 +102,10 @@ rectmat rectmat::transp()
 	return AT;
 }
 rectmat rectmat::operator*(const double scal){ 
-	rectmat temp(row, col);
-		temp = *this;
-		for (int i = 0; i < col * row; i++) {
-			temp.pmat[i]*=scal;
-		}
+	rectmat temp(*this);
+	for (int i = 0; i < col * row; i++) {
+		temp.pmat[i]*=scal;
+	}
 	
 	return temp;
 }
